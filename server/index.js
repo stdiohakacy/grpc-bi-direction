@@ -28,10 +28,11 @@ async function greetEveryone(call, callback) {
 
         const response = new greets.GreetEveryoneResponse();
         // response.setGreet(greeting);
-        response.setResult("Paulo Dichone");
+        response.setResult("Full name from server");
         call.write(response);
-        await sleep(1500);
+        await sleep(3000);
     }
+    // Server will auto call end but this command will client call end
     call.end();
 }
 

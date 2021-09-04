@@ -22,12 +22,12 @@ async function callBiDirect() {
         console.log(response.getResult());
     });
     call.on('error', error => { console.log(error); });
-    call.on('end', () => { console.log(`Ended!`); });
+    call.on('end', () => { console.log(`Server Ended!`); });
 
     for(let i = 0; i < 10; i++) {
         const greeting = new greets.Greeting();
-        greeting.setFirstName("Nguyen");
-        greeting.setLastName("Duy");
+        greeting.setFirstName("Full name");
+        greeting.setLastName(" from client");
         const request = new greets.GreetEveryoneRequest();
         request.setGreet(greeting);
         call.write(request);
